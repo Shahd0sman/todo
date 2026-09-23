@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: var(--background);
+    color: var(--text);
+}
+:root{
+    --primary:#9d8189;
+    --primary-hover:#B49CA3;
+    --background:#f2f2f2;
+    --surface:#F8F5F3;
+    --warning:#C49A5A;
+    --warning-surface:#F6EFDF;
+    --err:#B86B6B;
+    --err-surface: #F5E6E6;
+    --info:#7895A5;
+    --info-surface:#E7EEF1;
+    --success:#7A9E7E;
+    --success-surface:#EAF1EA;
+    --text:#3F3438;
+    --p:#74666B;
+    --font-main: Manrope;
+    --font-12: 12px;
+    --font-14: 14px;
+    --font-16: 16px;
+    --font-18: 18px;
+    --font-24: 24px;
+    --font-32:32px;
+    --font-display:48px;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --line-tight: 1.2;
+    --line-normal: 1.5;
+    --line-relaxed: 1.7;
+}
+a{
+    text-decoration: none;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary);
+    width: 240px;
+    min-height: 100vh;
+    padding: 32px 16px;
+    gap: 40px;
+}
+.sidebar-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px 24px;
+    border-bottom: 0.5px solid var(--surface);
+}
+.sidebar-brand{
+    color: var(--surface);
+    font-family: var(--font-main);
+    font-size: var(--font-display);
+    font-weight: var(--weight-bold);
+}
+.add-task{
+    width: 42px;
+    height: 42px;
+    border: none;
+    background-color: var(--surface);
+    color: var(--primary);
+    border-radius: 8px;
+    font-size: var(--font-24);
+    font-weight: var(--weight-semibold);
+}
+.add-task:hover{
+    background-color: var(--warning-surface);
+    transform: translateY(-2px);
+}
+.sidebar-nav{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.sidelinks{
+    padding:16px;
+    border-radius: 8px;
+    color: var(--background);
+    font-family: var(--font-main);
+    font-weight: var(--weight-semibold);
+    font-size: var(--font-16);
+    transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+
+}
+.sidelinks:hover,
+.sidelinks.active{
+    background-color: var(--primary-hover);
+}
+.sidelinks:hover{
+    transform: translateX(3px);
+}
