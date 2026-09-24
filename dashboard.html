@@ -11,14 +11,49 @@
     <div class="sidebar">
         <div class="sidebar-top">
             <a href="dashboard.html" class="sidebar-brand">Todo</a>
-            <button class="add-task">+</button>
+            <button class="add-task" id="add">+</button>
         </div>
+
         <nav class="sidebar-nav">
             <a href="dashboard.html" class="sidelinks active">Dashboard</a>
             <a href="progress.html" class="sidelinks">Progress</a>
             <a href="tasks.html" class="sidelinks">Tasks</a>
         </nav>
     </div>
+    <div class="modal" id="taskModal">
+  <div class="modal-content">
+    <h2>Add New Task</h2>
+    <div class="names">
+    <input type="text" id="taskInput" placeholder="Task title..."/>
+    <button type="button" class="subtasks-btn" id="subtasksBtn" aria-expanded="false">+ Subtask</button>
+    <div id="subtaskList" class="subtask-list"></div>
+    </div>
+    <div class="details">
+      <div class="detail-top-row">
+        <div class="detail-field">
+          <label for="deadline">Deadline</label>
+          <input type="date" id="deadline" />
+        </div>
+        <div class="detail-field">
+          <label for="taskContext">Task for</label>
+          <input type="text" id="taskContext" placeholder="College, home, work..." />
+        </div>
+      </div>
+      <div class="detail-field">
+        <label for="priority-low">Priority</label>
+        <div class="priority-options" role="group" aria-label="Task priority">
+          <button type="button" id="priority-low" class="priority-btn low" data-priority="low" aria-pressed="false">Low</button>
+          <button type="button" id="priority-medium" class="priority-btn medium selected" data-priority="medium" aria-pressed="true">Medium</button>
+          <button type="button" id="priority-high" class="priority-btn high" data-priority="high" aria-pressed="false">High</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-buttons">
+      <button id="cancelBtn">Cancel</button>
+      <button id="saveTaskBtn">Add Task</button>
+    </div>
+  </div>
+</div>
 <script src="scripts/main.js"></script>
 </body>
 </html>

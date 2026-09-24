@@ -101,3 +101,191 @@ a{
 .sidelinks:hover{
     transform: translateX(3px);
 }
+.modal {
+  display: none;
+  position:fixed;
+        inset: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  background-color: var(--surface);
+    width: min(460px, calc(100% - 32px));
+    min-height: 300px;
+        max-height: calc(100vh - 32px);
+    height: auto;
+  border: 0.5px solid var(--primary);
+  border-radius: 16px;
+  padding: 0;
+}
+h2{
+    color: var(--text);
+    font-family: var(--font-main);
+    display: flex;
+    justify-content: center;
+}
+.modal-content{
+    width: min(100%, 380px);
+    max-height: calc(100vh - 80px);
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    overflow-y: auto;
+}
+.names{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:8px;
+}
+#taskInput{
+    flex: 1;
+    min-width: 0;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--primary);
+}
+#taskInput:focus{
+    outline: none;
+}
+.subtasks-btn{
+    border: 1px solid var(--primary);
+    background-color: var(--primary);
+    color: var(--surface);
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-size: var(--font-12);
+    font-weight: var(--weight-semibold);
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+.subtasks-btn:hover{
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+.subtask-list{
+    width: 100%;
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    gap: 8px;
+}
+.subtask-row{
+    width: 100%;
+    display: flex;
+    gap: 8px;
+}
+.subtask-input{
+    min-width: 0;
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--primary);
+}
+.subtask-input:focus{
+    outline: none;
+}
+.remove-subtask{
+    width: 36px;
+    border: 1px solid var(--err);
+    border-radius: 8px;
+    background-color: var(--err-surface);
+    color: var(--err);
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-weight: var(--weight-bold);
+}
+.remove-subtask:hover{
+    background-color: var(--err);
+    color: var(--surface);
+}
+
+.details label{
+    color: var(--p);
+    font-family: var(--font-main);
+    font-size: var(--font-12);
+    font-weight: var(--weight-semibold);
+}
+.details input,
+.details select,
+.priority-btn{
+    width: 100%;
+    min-height: 36px;
+    padding: 8px;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--font-main);
+}
+.details input:focus,
+.details select:focus,
+.priority-btn:focus-visible{
+    outline: 2px solid var(--primary-hover);
+    outline-offset: 1px;
+}
+.priority-options{
+    display: flex;
+    gap: 6px;
+}
+.priority-btn{
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 8px 6px;
+    color: var(--text);
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-size: var(--font-12);
+    font-weight: var(--weight-semibold);
+    opacity: 0.65;
+    transition: opacity 160ms ease, transform 160ms ease, border-color 160ms ease;
+}
+.priority-btn:hover,
+.priority-btn.selected{
+    opacity: 1;
+    transform: translateY(-1px);
+}
+.priority-btn.selected{
+    border-color: var(--text);
+}
+.priority-btn.low{
+    background-color: var(--info-surface);
+    color: var(--info);
+}
+.priority-btn.medium{
+    background-color: var(--warning-surface);
+    color: var(--warning);
+}
+.priority-btn.high{
+    background-color: var(--err-surface);
+    color: var(--err);
+}
+.details{
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     gap: 12px;
+}
+.detail-field{
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     gap: 6px;
+}
+.detail-top-row{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+@media (max-width: 480px){
+    .detail-top-row{
+        grid-template-columns: 1fr;
+    }
+}
+
