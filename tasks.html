@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/tasks.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/tasks.css">
     <title>Todo | Tasks</title>
 </head>
 <body>
     <div class="sidebar">
         <div class="sidebar-top">
             <a href="dashboard.html" class="sidebar-brand">Todo</a>
-            <button class="add-task">+</button>
+            <a href="dashboard.html" class="add-task" aria-label="Add task">+</a>
         </div>
         <nav class="sidebar-nav">
             <a href="dashboard.html" class="sidelinks ">Dashboard</a>
@@ -19,5 +19,18 @@
             <a href="tasks.html" class="sidelinks active">Tasks</a>
         </nav>
     </div>
+        <main class="tasks-page">
+            <header class="tasks-header">
+                <h1>Your Tasks</h1>
+                <a href="dashboard.html" class="secondbtn">+ Add Task</a>
+            </header>
+            <section class="empty-state" id="emptyState">
+                <img src="assets/ChatGPT Image Sep 27, 2026, 07_13_17 AM.png" alt="">
+                <h2>No tasks yet!</h2>
+                <p>Start small, add your first task, and make today count.</p>
+            </section>
+            <section class="task-list" id="taskList" aria-live="polite"></section>
+        </main>
+        <script src="scripts/tasks.js"></script>
 </body>
 </html>

@@ -44,7 +44,7 @@ cancelBtn.addEventListener("click", () => {
   resetTaskForm();
 });
 
-saveTaskBtn.addEventListener("click", () => {
+saveTaskBtn.addEventListener("click", async () => {
   const task = taskInput.value;
 
   if (task.trim() === "") {
@@ -59,13 +59,28 @@ saveTaskBtn.addEventListener("click", () => {
       .filter(Boolean),
     deadline: deadlineInput.value,
     priority: selectedPriority,
-    context: taskContextInput.value
+    context: taskContextInput.value.trim()
   };
 
-  console.log(taskDetails);
+  saveTaskBtn.disabled = true;
+  try {
+    const response = await fetch("/api/tasks", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(taskDetails)
+    });
 
-  taskModal.style.display = "none";
-  resetTaskForm();
+    if (!response.ok) {
+      throw new Error("The task could not be saved.");
+    }
+
+    taskModal.style.display = "none";
+    resetTaskForm();
+  } catch (error) {
+    alert(`${error.message} Make sure the Todo server is running and try again.`);
+  } finally {
+    saveTaskBtn.disabled = false;
+  }
 });
 subtasksBtn.addEventListener("click", () => {
   const subtaskRow = document.createElement("div");

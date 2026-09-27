@@ -1,0 +1,141 @@
+body {
+	display: flex;
+}
+
+.sidebar {
+	flex: 0 0 240px;
+}
+
+.tasks-page {
+	flex: 1;
+	width: min(100% - 48px, 960px);
+	min-width: 0;
+	margin: 48px auto;
+	color: var(--text);
+	font-family: var(--font-main);
+}
+
+.tasks-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding-bottom: 24px;
+	border-bottom: 1px solid var(--primary-hover);
+}
+
+.tasks-header h1 {
+	font-size: var(--font-32);
+}
+
+.tasks-header .secondbtn {
+	display: inline-flex;
+	align-items: center;
+	text-decoration: none;
+}
+
+.empty-state {
+	display: flex;
+	min-height: 60vh;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	text-align: center;
+}
+
+.empty-state[hidden] {
+	display: none;
+}
+
+.empty-state img {
+	width: min(100%, 420px);
+	max-height: 300px;
+	object-fit: contain;
+}
+
+.empty-state h2 {
+	font-size: var(--font-24);
+}
+
+.empty-state p {
+	color: var(--p);
+}
+
+.task-list {
+	display: grid;
+	gap: 16px;
+	padding-top: 24px;
+}
+
+.task-item {
+	padding: 20px;
+	border: 1px solid var(--primary-hover);
+	border-radius: 8px;
+	background: var(--surface);
+}
+
+.task-item h2 {
+	justify-content: flex-start;
+	overflow-wrap: anywhere;
+	font-size: var(--font-18);
+}
+
+.task-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 20px;
+	margin-top: 12px;
+	color: var(--p);
+	font-size: var(--font-14);
+}
+
+.task-priority {
+	font-weight: var(--weight-bold);
+	text-transform: capitalize;
+}
+
+.task-subtasks {
+	display: grid;
+	gap: 6px;
+	margin: 16px 0 0;
+	padding-left: 20px;
+	color: var(--p);
+	font-size: var(--font-14);
+}
+
+.task-error {
+	padding: 24px 0;
+	color: var(--err);
+}
+
+@media (max-width: 700px) {
+	body {
+		flex-direction: column;
+	}
+
+	.sidebar {
+		flex: 0 0 auto;
+		width: 100%;
+		min-height: auto;
+		padding: 16px;
+		gap: 16px;
+	}
+
+	.sidebar-top {
+		padding-bottom: 16px;
+	}
+
+	.sidebar-nav {
+		flex-direction: row;
+	}
+
+	.tasks-page {
+		width: calc(100% - 32px);
+		margin: 24px auto;
+	}
+
+	.tasks-header h1 {
+		font-size: var(--font-24);
+	}
+}

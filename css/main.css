@@ -12,7 +12,7 @@ body{
 :root{
     --primary:#9d8189;
     --primary-hover:#B49CA3;
-    --background:#f2f2f2;
+    --background:#F9F4EF;
     --surface:#F8F5F3;
     --warning:#C49A5A;
     --warning-surface:#F6EFDF;
@@ -101,10 +101,58 @@ a{
 .sidelinks:hover{
     transform: translateX(3px);
 }
+.pic{
+    position: fixed;
+    left:530px;
+    top:100px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+img{
+    width:700px;
+}
+.pic h1{
+    font-family: var(--font-main);
+    color:var(--primary)
+}
+.heading{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    
+}
+.p{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+.p-btn{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:16px;
+}
+.pic p{
+    font-family: var(--font-main);
+    color:var(--p);
+    font-size: var(--font-14);
+    
+}
+.secondbtn{
+    background-color: var(--primary);
+    color:var(--surface);
+    border:none;
+    border-radius:8px;
+    padding:8px 16px;
+    font-family: var(--font-main);
+    font-size:var(--font-16)
+}
+
 .modal {
   display: none;
   position:fixed;
-        inset: auto;
+    inset: auto;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -237,7 +285,6 @@ h2{
     border: 1px solid transparent;
     border-radius: 8px;
     padding: 8px 6px;
-    color: var(--text);
     cursor: pointer;
     font-family: var(--font-main);
     font-size: var(--font-12);
@@ -250,20 +297,44 @@ h2{
     opacity: 1;
     transform: translateY(-1px);
 }
-.priority-btn.selected{
-    border-color: var(--text);
+.priority-btn.low.selected{
+    border-color: var(--success);
 }
 .priority-btn.low{
-    background-color: var(--info-surface);
-    color: var(--info);
+    background-color: var(--success-surface);
+    color: var(--success);
+}
+.priority-btn.medium.selected{
+    border-color: var(--warning);
 }
 .priority-btn.medium{
     background-color: var(--warning-surface);
     color: var(--warning);
 }
+.priority-btn.high.selected{
+    border-color: var(--error);
+}
 .priority-btn.high{
     background-color: var(--err-surface);
     color: var(--err);
+}
+.modal-buttons{
+    display: flex;
+    gap:16px;
+}
+.cancel{
+    border:none;
+    background-color: var(--err-surface);
+    color:var(--err);
+    padding:8px 16px;
+    border-radius: 8px;
+}
+.save{
+    border:none;
+    background-color: var(--primary);
+    color:var(--surface);
+    padding:8px 16px;
+    border-radius:8px;
 }
 .details{
      width: 100%;
