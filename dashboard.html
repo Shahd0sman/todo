@@ -15,56 +15,65 @@
         </div>
 
         <nav class="sidebar-nav">
-            <a href="dashboard.html" class="sidelinks active">Dashboard</a>
-            <a href="progress.html" class="sidelinks">Progress</a>
-            <a href="tasks.html" class="sidelinks">Tasks</a>
+            <a href="dashboard.html" class="sidelinks " id="dashboard">Dashboard</a>
+            <a href="progress.html" class="sidelinks " id="progress">Progress</a>
+            <a href="tasks.html" class="sidelinks " id="tasks">Tasks</a>
         </nav>
     </div>
     <div class="pic">
       <img src="assets/ChatGPT Image Sep 27, 2026, 07_13_17 AM.png">
-      <div class="heading">
+      <div>
          <h1>No tasks yet!</h1>
           <div class="p">
           <p>start small ,add your first task </p>
-         <p>and make today count</p>
+          <p>and make today count</p>
           </div>
          </div>
       </div>
-      
-    <div class="modal" id="taskModal">
-  <div class="modal-content">
-    <h2>Add New Task</h2>
-    <div class="names">
-    <input type="text" id="taskInput" placeholder="Task title..."/>
-    <button type="button" class="subtasks-btn" id="subtasksBtn" aria-expanded="false">+ Subtask</button>
-    <div id="subtaskList" class="subtask-list"></div>
-    </div>
-    <div class="details">
-      <div class="detail-top-row">
-        <div class="detail-field">
-          <label for="deadline">Deadline</label>
-          <input type="date" id="deadline" />
+      <div class="modal" id="modal">
+        <h1>Add Task</h1>
+        <div class="taskinp">
+          <input placeholder="Task Title...">
+          <button class="add" id="subtasks-btn">+ Subtasks</button>
         </div>
-        <div class="detail-field">
-          <label for="taskContext">Task for</label>
-          <input type="text" id="taskContext" placeholder="College, home, work..." />
+        <div class="task-details">
+          <!--category and date-->
+          <div class="date-category">
+            <div class="labels">
+              <label for="date">Deadline</label>
+            <input type="date" class="calender">
+            </div>
+            <div class="labels">
+              <label for="category">Category</label>
+          <input placeholder="school,home,work...">
+            </div>
+          </div>
+          </div>
+          <!--Priority-->
+          <div class="labels">
+            <label for="priority">Priority</label>
+            <div class="priority-btn">
+              <button class="low btn">Low</button>
+              <button class="medium btn">Medium</button>
+              <button class="high btn">High</button>
+            </div>
+          </div>
+          <!--status-->
+          <div class="status">
+            <label for="status">Set Status</label>
+            <div class="status-btn">
+              <button class="todo btn">To-do</button>
+              <button class="medium btn">In Progress</button>
+              <button class="done btn">Done</button>
+            </div>
+          </div>
+           <div class="modal-btn">
+            <button class="cancel" id="cancel">Cancel</button>
+            <button class="add" id="add">Add</button>
         </div>
-      </div>
-      <div class="detail-field">
-        <label for="priority-low">Priority</label>
-        <div class="priority-options" role="group" aria-label="Task priority">
-          <button type="button" id="priority-low" class="priority-btn low" data-priority="low" aria-pressed="false">Low</button>
-          <button type="button" id="priority-medium" class="priority-btn medium selected" data-priority="medium" aria-pressed="true">Medium</button>
-          <button type="button" id="priority-high" class="priority-btn high" data-priority="high" aria-pressed="false">High</button>
-        </div>
-      </div>
-    </div>
-    <div class="modal-buttons">
-      <button class='cancel' id="cancelBtn">Cancel</button>
-      <button class='save' id="saveTaskBtn">Add Task</button>
-    </div>
-  </div>
-</div>
+          </div>
+          <div id="overlay"></div>
+          
 <script src="scripts/main.js"></script>
 </body>
 </html>

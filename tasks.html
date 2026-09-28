@@ -8,29 +8,72 @@
     <title>Todo | Tasks</title>
 </head>
 <body>
-    <div class="sidebar">
+     <div class="sidebar">
         <div class="sidebar-top">
             <a href="dashboard.html" class="sidebar-brand">Todo</a>
-            <a href="dashboard.html" class="add-task" aria-label="Add task">+</a>
+            <button class="add-task" id="add">+</button>
         </div>
+
         <nav class="sidebar-nav">
-            <a href="dashboard.html" class="sidelinks ">Dashboard</a>
+            <a href="dashboard.html" class="sidelinks active">Dashboard</a>
             <a href="progress.html" class="sidelinks">Progress</a>
-            <a href="tasks.html" class="sidelinks active">Tasks</a>
+            <a href="tasks.html" class="sidelinks">Tasks</a>
         </nav>
     </div>
-        <main class="tasks-page">
-            <header class="tasks-header">
-                <h1>Your Tasks</h1>
-                <a href="dashboard.html" class="secondbtn">+ Add Task</a>
-            </header>
-            <section class="empty-state" id="emptyState">
-                <img src="assets/ChatGPT Image Sep 27, 2026, 07_13_17 AM.png" alt="">
-                <h2>No tasks yet!</h2>
-                <p>Start small, add your first task, and make today count.</p>
-            </section>
-            <section class="task-list" id="taskList" aria-live="polite"></section>
-        </main>
-        <script src="scripts/tasks.js"></script>
+    <div class="pic">
+      <img src="assets/ChatGPT Image Sep 27, 2026, 07_13_17 AM.png">
+      <div>
+         <h1>No tasks yet!</h1>
+          <div class="p">
+          <p>start small ,add your first task </p>
+          <p>and make today count</p>
+          </div>
+         </div>
+      </div>
+      <div class="modal" id="modal">
+        <h1>Add Task</h1>
+        <div class="taskinp">
+          <input placeholder="Task Title...">
+          <button class="add" id="subtasks-btn">+ Subtasks</button>
+        </div>
+        <div class="task-details">
+          <!--category and date-->
+          <div class="date-category">
+            <div class="labels">
+              <label for="date">Deadline</label>
+            <input type="date" class="calender">
+            </div>
+            <div class="labels">
+              <label for="category">Category</label>
+          <input placeholder="school,home,work...">
+            </div>
+          </div>
+          </div>
+          <!--Priority-->
+          <div class="labels">
+            <label for="priority">Priority</label>
+            <div class="priority-btn">
+              <button class="low btn">Low</button>
+              <button class="medium btn">Medium</button>
+              <button class="high btn">High</button>
+            </div>
+          </div>
+          <!--status-->
+          <div class="status">
+            <label for="status">Set Status</label>
+            <div class="status-btn">
+              <button class="todo btn">To-do</button>
+              <button class="medium btn">In Progress</button>
+              <button class="done btn">Done</button>
+            </div>
+          </div>
+           <div class="modal-btn">
+            <button class="cancel" id="cancel">Cancel</button>
+            <button class="add" id="add">Add</button>
+        </div>
+          </div>
+          <div id="overlay"></div>
+          
+<script src="scripts/main.js"></script>
 </body>
 </html>
