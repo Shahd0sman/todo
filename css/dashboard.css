@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0 ;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: var(--background);
+    color: var(--text);
+}
+:root{
+    --primary:#9d8189;
+    --primary-hover:#B49CA3;
+    --background:#F9F4EF;
+    --surface:#F8F5F3;
+    --warning:#C49A5A;
+    --warning-surface:#F6EFDF;
+    --err:#B86B6B;
+    --err-surface: #F5E6E6;
+    --info:#7895A5;
+    --info-surface:#E7EEF1;
+    --success:#7A9E7E;
+    --success-surface:#EAF1EA;
+    --disabel:#6B7280;
+    --text:#3F3438;
+    --placeholder:#3F343880;
+    --p:#74666B;
+    --font-main: Manrope;
+    --font-12: 12px;
+    --font-14: 14px;
+    --font-16: 16px;
+    --font-18: 18px;
+    --font-24: 24px;
+    --font-32:32px;
+    --font-display:48px;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --line-tight: 1.2;
+    --line-normal: 1.5;
+    --line-relaxed: 1.7;
+}
+
+.counting{
+    display: flex;
+    position: fixed;
+    left:20%;
+    top:21%;
+    gap:32px;
+
+}
+.card{
+    width:250px;
+    background-color: var(--surface);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.093);
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+}
+.card h1{
+    font-size: var(--font-24);
+    font-family: var(--font-main);
+    font-weight: var(--weight-bold);
+
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btnd{
+    border: none;
+    color: var(--surface);
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: var(--primary);
+}
+.btnd:hover{
+    background-color: var(--primary-hover);
+}
+
+
+
+
+

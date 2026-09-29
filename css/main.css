@@ -111,11 +111,12 @@ a{
     display:flex;
     flex-direction: column;
     align-items: center;
+    scale: 1;
 }
 img{
     width:700px;
 }
- h1{
+.pic h1{
     font-family: var(--font-main);
     color:var(--primary)
 }
@@ -216,25 +217,44 @@ label{
     color: var(--info);
     background-color: var(--info-surface);
     border: 1px solid var(--info);
+    
+}
+.low.active{
+    box-shadow: 4px 4px ;
 }
 .medium{
     color: var(--warning);
     background-color: var(--warning-surface);
     border: 1px solid var(--warning);
 }
+.medium.active{
+    box-shadow: 4px 4px ;
+}
 .high{
     color: var(--err);
     background-color: var(--err-surface);
     border:1px solid var(--err)
 }  
+.high.active{
+    box-shadow: 4px 4px ;
+}
 .todo{
     color: var(--disabel);
     border: 1px solid var(--disabel);
+}
+.todo.active{
+    box-shadow: 4px 4px ;
 }
 .done{
     color:var(--success);
     background-color: var(--success-surface);
     border: 1px solid var(--success);
+}
+.done.active{
+    box-shadow: 4px 4px ;
+}
+.progress.active{
+    box-shadow: 4px 4px ;
 }
 .modal-btn{
     display: flex;

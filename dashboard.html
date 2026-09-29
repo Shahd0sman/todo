@@ -33,7 +33,7 @@
       <div class="modal" id="modal">
         <h1>Add Task</h1>
         <div class="taskinp">
-          <input placeholder="Task Title...">
+          <input placeholder="Task Title..." id="title">
           <button class="add" id="subtasks-btn">+ Subtasks</button>
         </div>
         <div class="task-details">
@@ -41,11 +41,11 @@
           <div class="date-category">
             <div class="labels">
               <label for="date">Deadline</label>
-            <input type="date" class="calender">
+            <input type="date" class="calender" id="date">
             </div>
             <div class="labels">
               <label for="category">Category</label>
-          <input placeholder="school,home,work...">
+          <input placeholder="school,home,work..." id="category">
             </div>
           </div>
           </div>
@@ -53,26 +53,57 @@
           <div class="labels">
             <label for="priority">Priority</label>
             <div class="priority-btn">
-              <button class="low btn">Low</button>
-              <button class="medium btn">Medium</button>
-              <button class="high btn">High</button>
+              <button class="low btn p" id="low" value="low">Low</button>
+              <button class="medium btn p" id="medium" value="medium">Medium</button>
+              <button class="high btn p" id="high" value="high">High</button>
             </div>
           </div>
           <!--status-->
           <div class="status">
             <label for="status">Set Status</label>
             <div class="status-btn">
-              <button class="todo btn">To-do</button>
-              <button class="medium btn">In Progress</button>
-              <button class="done btn">Done</button>
+              <button class="todo btn s" value="to-do">To-do</button>
+              <button class="medium btn s" value="in progress">In Progress</button>
+              <button class="done btn s" value="done">Done</button>
             </div>
           </div>
            <div class="modal-btn">
             <button class="cancel" id="cancel">Cancel</button>
-            <button class="add" id="add">Add</button>
+            <button class="add" id="addtask">Add</button>
         </div>
           </div>
           <div id="overlay"></div>
+          <div class="counting">
+            <div class="totaltasks card">
+              <h1>total tasks</h1>
+              <div class="total">
+                <h5>example numbers</h5>
+                <button class="total-btn btnd">see tasks</button>
+              </div>
+              
+            </div>
+            <div class="totalprogress card">
+              <h1>total in progress</h1>
+               <div class="total">
+                <h5>example numbers</h5>
+                <button class="progress-btn btnd">see tasks</button>
+              </div>
+            </div>
+            <div class="totalhigh card">
+              <h1>total high priority</h1>
+               <div class="total">
+                <h5>example numbers</h5>
+                <button class="high-btn btnd">see tasks</button>
+              </div>
+            </div>
+            <div class="totaldone card">
+              <h1>total done</h1>
+              <div class="total">
+                <h5>example numbers</h5>
+                <button class="done-btn btnd">see tasks</button>
+              </div>
+            </div>
+          </div>
           
 <script src="scripts/main.js"></script>
 </body>
