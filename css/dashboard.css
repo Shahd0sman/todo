@@ -44,7 +44,7 @@ body{
 }
 
 .counting{
-    display: flex;
+    display: none;
     position: fixed;
     left:20%;
     top:21%;

@@ -80,8 +80,6 @@ add.addEventListener('click',async()=>{
     if (response.ok) {
         showPopup('task added successfully!');
     }
-
-
 })
 
 
