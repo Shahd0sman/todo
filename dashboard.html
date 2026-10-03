@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <title>Todo</title>
 </head>
 <body>
@@ -73,39 +74,47 @@
         </div>
           </div>
           <div id="overlay"></div>
+          <div class="greeting">
+           <h1>Good morning</h1>
+           <h5 id="current-date"></h5> 
+          </div>
+
           <div class="counting" id="counting">
             <div class="totaltasks card">
-              <h1>total tasks</h1>
-              <div class="total">
+              <div class="head">
+              <i class="icon" data-lucide="square-pen"></i>
+              <h1>All tasks</h1>
+              </div>
                 <h5 id="total"></h5>
-                <button class="total-btn btnd">see tasks</button>
-              </div>
-              
             </div>
+
             <div class="totalprogress card">
-              <h1>total in progress</h1>
-               <div class="total">
-                <h5 id="totalprogress">0</h5>
-                <button class="progress-btn btnd">see tasks</button>
+              <div class="head">
+              <i class="icon" data-lucide="loader"></i>
+                <h1>In progress</h1>
               </div>
+                <h5 id="totalprogress"></h5>
             </div>
             <div class="totalhigh card">
-              <h1>total high priority</h1>
-               <div class="total">
+               <div class="head">
+              <i class='icon' data-lucide="square-exclamation-point"></i>
+                <h1>High priority</h1>
+               </div>
                 <h5 id="totalhigh"></h5>
-                <button class="high-btn btnd">see tasks</button>
-              </div>
             </div>
             <div class="totaldone card">
-              <h1>total done</h1>
-              <div class="total">
+               <div class="head">
+              <i class="icon" data-lucide="circle-check-big"></i>
+                <h1>completed</h1>
+               </div>
                 <h5 id="totaldone">o</h5>
-                <button class="done-btn btnd">see tasks</button>
-              </div>
             </div>
           </div>
           
 <script src="scripts/main.js"></script>
 <script src="scripts/dashboard.js"></script>
+<script>
+    lucide.createIcons();
+</script>
 </body>
 </html>

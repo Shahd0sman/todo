@@ -36,3 +36,12 @@ async function loadDashboard() {
     }
 }
 loadDashboard();
+
+const getdate=new Date()
+const date=getdate.toLocaleDateString('en-us',{
+    weekday:'short',
+    month:'short',
+    day:'numeric',
+    year:'numeric'
+})
+document.getElementById('current-date').textContent=date
