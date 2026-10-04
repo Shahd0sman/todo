@@ -1,141 +1,131 @@
-body {
-	display: flex;
+body{
+	background:var(--background);
+	font-family:var(--font-main);
 }
-
-.sidebar {
-	flex: 0 0 240px;
+:root{
+    --primary:#9d8189;
+    --primary-hover:#B49CA3;
+    --background:#F9F4EF;
+    --surface:#F8F5F3;
+    --warning:#C49A5A;
+    --warning-surface:#F6EFDF;
+    --err:#B86B6B;
+    --err-surface: #F5E6E6;
+    --info:#7895A5;
+    --info-surface:#E7EEF1;
+    --success:#7A9E7E;
+    --success-surface:#EAF1EA;
+    --disabel:#6B7280;
+    --text:#3F3438;
+    --placeholder:#3F343880;
+    --p:#74666B;
+    --font-main: Manrope;
+    --font-12: 12px;
+    --font-14: 14px;
+    --font-16: 16px;
+    --font-18: 18px;
+    --font-24: 24px;
+    --font-32:32px;
+    --font-display:48px;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --line-tight: 1.2;
+    --line-normal: 1.5;
+    --line-relaxed: 1.7;
 }
-
-.tasks-page {
-	flex: 1;
-	width: min(100% - 48px, 960px);
-	min-width: 0;
-	margin: 48px auto;
-	color: var(--text);
-	font-family: var(--font-main);
+.task-list{
+	position:absolute;
+	top:154px;
+	left:300px;
+	display:none;
+	flex-direction:column;
+	gap:16px;
+	
 }
-
-.tasks-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 16px;
-	padding-bottom: 24px;
-	border-bottom: 1px solid var(--primary-hover);
-}
-
-.tasks-header h1 {
-	font-size: var(--font-32);
-}
-
-.tasks-header .secondbtn {
-	display: inline-flex;
-	align-items: center;
-	text-decoration: none;
-}
-
-.empty-state {
-	display: flex;
-	min-height: 60vh;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 12px;
-	text-align: center;
-}
-
-.empty-state[hidden] {
-	display: none;
-}
-
-.empty-state img {
-	width: min(100%, 420px);
-	max-height: 300px;
-	object-fit: contain;
-}
-
-.empty-state h2 {
-	font-size: var(--font-24);
-}
-
-.empty-state p {
-	color: var(--p);
-}
-
-.task-list {
-	display: grid;
-	gap: 16px;
-	padding-top: 24px;
-}
-
-.task-item {
-	padding: 20px;
-	border: 1px solid var(--primary-hover);
+.task-box{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	width: 500px;
+	box-shadow: 0px 4px 10px rgba(189, 189, 189, 0.25);
+	cursor:pointer;
 	border-radius: 8px;
-	background: var(--surface);
+	padding: 16px;
 }
-
-.task-item h2 {
-	justify-content: flex-start;
-	overflow-wrap: anywhere;
-	font-size: var(--font-18);
+.task-box:hover{
+	h1{
+		color:var(--primary-hover);
+	}
+	transform:scale(1.01);
 }
-
-.task-meta {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px 20px;
-	margin-top: 12px;
-	color: var(--p);
-	font-size: var(--font-14);
+.about{
+	display:flex;
+	flex-direction:column;
+	gap:8px;
+	padding:16px;
 }
-
-.task-priority {
-	font-weight: var(--weight-bold);
-	text-transform: capitalize;
+.about-head{
+	display:flex;
+	align-items:center;
+	gap:8px;
 }
-
-.task-subtasks {
-	display: grid;
-	gap: 6px;
-	margin: 16px 0 0;
-	padding-left: 20px;
-	color: var(--p);
-	font-size: var(--font-14);
+.about-head h1{
+	font-size:var(--font-24);
+	font-weight:var(--weight-bold);
+	color:var(--text);
 }
-
-.task-error {
-	padding: 24px 0;
-	color: var(--err);
+.about-head p{
+	font-size:var(--font-14);
+	font-weight:var(--weight-regular);
+	color:var(--placeholder);
 }
+.prio-state{
+	display:flex;
+	gap:8px;
+}
+.prio{
+	display:flex;
+	align-items:center;
+	background:var(--err-surface);
+	color:var(--err);
+	border-radius:8px;
+	gap:8px;
+	padding:4px 8px;
+}
+.prio h2{
+	font-size:var(--font-14);
+	font-weight:var(--weight-semibold);
+}
+.prio-circle{
+	width: 8px;
 
-@media (max-width: 700px) {
-	body {
-		flex-direction: column;
-	}
-
-	.sidebar {
-		flex: 0 0 auto;
-		width: 100%;
-		min-height: auto;
-		padding: 16px;
-		gap: 16px;
-	}
-
-	.sidebar-top {
-		padding-bottom: 16px;
-	}
-
-	.sidebar-nav {
-		flex-direction: row;
-	}
-
-	.tasks-page {
-		width: calc(100% - 32px);
-		margin: 24px auto;
-	}
-
-	.tasks-header h1 {
-		font-size: var(--font-24);
-	}
+}
+.state{
+	display:flex;
+	align-items:center;
+	background:var(--warning-surface);
+	color:var(--warning);
+	border-radius:8px;
+	gap:8px;
+	padding:4px 8px;
+}
+.state h2{
+	font-size:var(--font-14);
+	font-weight:var(--weight-semibold);
+}
+.state-circle{
+	width: 8px;
+}
+.complete{
+	  width: 40px;
+	  height: 40px;
+	  stroke-width: 2px;
+	  stroke: var(--primary);
+}
+.complete:hover{
+	transform:scale(1.1);
+	stroke: var(--success);
+	
 }

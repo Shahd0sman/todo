@@ -46,7 +46,7 @@ body{
 
 .counting{
     display: none;
-    position: fixed;
+    position: absolute;
     left:20%;
     top:21%;
     gap:32px;

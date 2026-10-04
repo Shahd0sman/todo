@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="main/main.css">
     <link rel="stylesheet" href="css/tasks.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <title>Todo | Tasks</title>
 </head>
 <body>
-     <div class="sidebar">
+      <div class="sidebar">
         <div class="sidebar-top">
             <a href="dashboard.html" class="sidebar-brand">Todo</a>
             <button class="add-task" id="add">+</button>
         </div>
 
         <nav class="sidebar-nav">
-            <a href="dashboard.html" class="sidelinks active">Dashboard</a>
-            <a href="progress.html" class="sidelinks">Progress</a>
-            <a href="tasks.html" class="sidelinks">Tasks</a>
+            <a href="dashboard.html" class="sidelinks " id="dashboard">Dashboard</a>
+            <a href="progress.html" class="sidelinks " id="progress">Progress</a>
+            <a href="tasks.html" class="sidelinks " id="tasks">Tasks</a>
         </nav>
     </div>
     <div class="pic">
@@ -33,7 +34,7 @@
       <div class="modal" id="modal">
         <h1>Add Task</h1>
         <div class="taskinp">
-          <input placeholder="Task Title...">
+          <input placeholder="Task Title..." id="title">
           <button class="add" id="subtasks-btn">+ Subtasks</button>
         </div>
         <div class="task-details">
@@ -41,11 +42,11 @@
           <div class="date-category">
             <div class="labels">
               <label for="date">Deadline</label>
-            <input type="date" class="calender">
+            <input type="date" class="calender" id="date">
             </div>
             <div class="labels">
               <label for="category">Category</label>
-          <input placeholder="school,home,work...">
+          <input placeholder="school,home,work..." id="category">
             </div>
           </div>
           </div>
@@ -53,27 +54,54 @@
           <div class="labels">
             <label for="priority">Priority</label>
             <div class="priority-btn">
-              <button class="low btn">Low</button>
-              <button class="medium btn">Medium</button>
-              <button class="high btn">High</button>
+              <button class="low btn p" id="low" value="low">Low</button>
+              <button class="medium btn p" id="medium" value="medium">Medium</button>
+              <button class="high btn p" id="high" value="high">High</button>
             </div>
           </div>
           <!--status-->
           <div class="status">
             <label for="status">Set Status</label>
             <div class="status-btn">
-              <button class="todo btn">To-do</button>
-              <button class="medium btn">In Progress</button>
-              <button class="done btn">Done</button>
+              <button class="todo btn s" value="to-do">To-do</button>
+              <button class="medium btn s" value="in progress">In Progress</button>
+              <button class="done btn s" value="done">Done</button>
             </div>
           </div>
            <div class="modal-btn">
             <button class="cancel" id="cancel">Cancel</button>
-            <button class="add" id="add">Add</button>
+            <button class="add" id="addtask">Add</button>
         </div>
           </div>
           <div id="overlay"></div>
+
+        <div class="task-list" id="task-list">
+          <div class="task-box">
+            <div class="about">
+              <div class="about-head" id="title-date">
+                <h1></h1>
+                <p></p>
+              </div>
+              <div class="prio-state">
+                <div class="prio" id="prio">
+                  <i data-lucide="circle" class="prio-circle" id="prio-circle"></i>
+                  <h2></h2>
+                </div>
+
+                <div class="state" id="state">
+                  <i class="state-circle" data-lucide="circle" id="state-circle"></i>
+                  <h2></h2>
+                </div>
+              </div>
+            </div>
+              <i class="complete" data-lucide="square-check"></i>
+          </div>
+        </div>
           
-<script src="scripts/main.js"></script>
+<script src="main/main.js"></script>
+<script src="scripts/tasks.js"></script>
+<script>
+    lucide.createIcons();
+</script>
 </body>
 </html>
