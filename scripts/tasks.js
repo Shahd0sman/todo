@@ -6,63 +6,79 @@ async function tasks() {
     const taskList = document.getElementById('task-list');
     const empty = document.querySelector('.pic');
    if(tasks.length>0){
-    console.log('There are tasks');
-console.log(tasks);
+     console.log(tasks);
      taskList.style.display='flex';
      empty.style.display='none';
-     const title=document.querySelector('#title-date h1')
-     const date=document.querySelector('#title-date p')
-     const prio=document.getElementById('prio')
-    const priotext=document.querySelector('#prio h2')
-    const state=document.getElementById('state')
-     const statetext=document.querySelector('#state h2')
-     const prioCircle=document.querySelector('#prio-circle')
-     const stateCircle=document.querySelector('#state-circle')
-    console.log('title:', title);
-console.log('date:', date);
-console.log('priotext:', priotext);
-console.log('statetext:', statetext);
-console.log('prioCircle:', prioCircle);
-console.log('stateCircle:', stateCircle);
-     let i=0;
-     do{
-      if(tasks[i].priority==='high'){
-        prioCircle.style.fill='#B86B6B'
+   const taskbox=document.querySelector('.task-box')
+   tasks.forEach(task => {
+    const box=taskbox.cloneNode(true)
+    const title=box.querySelector('.about-head h1')
+    const date=box.querySelector('.about-head p')
+    const prio=box.querySelector('.prio')
+    const priotext=box.querySelector('.prio h2')
+    const priocircle=box.querySelector('.prio-circle')
+    const state=box.querySelector('.state')
+    const statetext=box.querySelector('.state h2')
+    const statecircle=box.querySelector('.state-circle')
+    const category=box.querySelector('.category')
+    const comp=box.querySelector('.complete')
+    const del=box.querySelector('.delete')
+
+    title.textContent=task.title
+    date.textContent=task.date
+    priotext.textContent=task.priority
+    statetext.textContent=task.status
+    category.textContent=task.category
+
+  if(task.priority==="high"){
+        priocircle.style.fill='#B86B6B'
+        priocircle.style.color='#B86B6B'
         prio.style.background='#F5E6E6'
         priotext.style.color='#B86B6B'
-      }else if(tasks[i].priority==='medium'){
-        prioCircle.style.fill='#C49A5A'
+      }else if(task.priority==="medium"){
+        priocircle.style.fill='#C49A5A'
+        priocircle.style.color='#C49A5A'
         prio.style.background='#F6EFDF'
         priotext.style.color='#C49A5A'
       }else{
-        prioCircle.style.fill='#7895A5'
+        priocircle.style.fill='#7895A5'
+        priocircle.style.color='#7895A5'
         prio.style.background='#E7EEF1'
         priotext.style.color='#7895A5'
       }
 
 
-      if(tasks[i].status==='done'){
-        stateCircle.style.fill='#7A9E7E'
+       if(task.status==="done"){
+        statecircle.style.fill='#7A9E7E'
+        statecircle.style.color='#7A9E7E'
         state.style.background='#EAF1EA'
         statetext.style.color='#7A9E7E'
-      }else if(tasks[i].status==='in-progress'){
-        stateCircle.style.fill='#C49A5A'
+      }else if(task.status==="in progress"){
+        statecircle.style.fill='#C49A5A'
+        statecircle.style.color='#C49A5A'
         state.style.background='#F6EFDF'
         statetext.style.color='#C49A5A'
       }else{
-        stateCircle.style.fill='#6B7280'
+        statecircle.style.fill='#6B7280'
+        statecircle.style.color='#6B7280'
         state.style.background='#F3F4F6'
         statetext.style.color='#6B7280'
       }
-      i++
-        title.textContent=tasks[i].title;
-      date.textContent=tasks[i].date;
-      priotext.textContent=tasks[i].priority;
-      statetext.textContent=tasks[i].status;
-      console.log('UI updated');
+        comp.addEventListener('click',()=>{
+        comp.classList.toggle('completed')
+      })
+         del.addEventListener('click',()=>{
+        del.classList.toggle('deleted')
+      })
+      
+      taskList.appendChild(box)
+    
 
-     }while(i<tasks.length-1)
-
+    
+   });
+    
+    
+     taskbox.style.display='none'
      }else{  
         taskList.style.display='none';
         empty.style.display='flex';

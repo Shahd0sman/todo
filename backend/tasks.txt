@@ -1,1 +1,1 @@
-[{"title":"task1","date":"2026-10-14","category":"home","priority":"low","status":"done"},{"title":"task2","date":"2026-10-23","category":"home","priority":"low","status":"done"},{"title":"task3","date":"2026-10-21","category":"home","priority":"medium","status":"done"},{"title":"task4","date":"2026-10-29","category":"home","priority":"low","status":"to-do"}]
+[{"title":"task1","date":"2026-10-15","category":"home","priority":"low","status":"done"},{"title":"task2","date":"2026-10-21","category":"home","priority":"low","status":"in progress"}]
