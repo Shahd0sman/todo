@@ -1,5 +1,4 @@
 
-
 async function loadDashboard() {
     const res = await fetch('http://localhost:5000/tasks');
     const tasks = await res.json();

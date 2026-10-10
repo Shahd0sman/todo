@@ -11,8 +11,9 @@ body{
     --warning-surface:#F6EFDF;
     --err:#B86B6B;
     --err-surface: #F5E6E6;
-    --info:#7895A5;
-    --info-surface:#E7EEF1;
+    --info: #1877F2;
+    --info-hover:#a2cafb;
+    --info-surface: #E8F1FE;
     --success:#7A9E7E;
     --success-surface:#EAF1EA;
     --disabel:#6B7280;
@@ -147,3 +148,26 @@ body{
 .deleted{
 	color: var(--err);
 }
+.task-details{
+	position: absolute;
+	right: 0;
+	top:0;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 4px 10px rgba(189, 189, 189, 0.25);
+	height: 100%;
+	padding: 16px;
+	justify-content: start;
+	width: 300px;
+}
+.heading{
+	display: flex;
+	width: 200px;
+	justify-content: space-between;
+    align-items: center;
+}
+.del-check{
+	display: flex;
+	gap:16px;
+}
+

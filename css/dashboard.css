@@ -19,8 +19,9 @@ body{
     --warning-surface:#F6EFDF;
     --err:#B86B6B;
     --err-surface: #F5E6E6;
-    --info:#7895A5;
-    --info-surface:#E7EEF1;
+    --info: #1877F2;
+    --info-hover:#a2cafb;
+    --info-surface: #E8F1FE;
     --success:#7A9E7E;
     --success-surface:#EAF1EA;
     --disabel:#6B7280;
@@ -94,6 +95,7 @@ body{
 }
 .greeting h1{
     font-size: var(--font-display);
+    color: var(--primary);
 }
 .head{
     display: flex;

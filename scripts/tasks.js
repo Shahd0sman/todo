@@ -66,6 +66,7 @@ async function tasks() {
       }
         comp.addEventListener('click',()=>{
         comp.classList.toggle('completed')
+        
       })
          del.addEventListener('click',()=>{
         del.classList.toggle('deleted')
@@ -83,5 +84,6 @@ async function tasks() {
         taskList.style.display='none';
         empty.style.display='flex';
     }
+  
 }
 tasks();

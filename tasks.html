@@ -9,7 +9,7 @@
     <title>Todo | Tasks</title>
 </head>
 <body>
-      <div class="sidebar">
+   <div class="sidebar">
         <div class="sidebar-top">
             <a href="dashboard.html" class="sidebar-brand">Todo</a>
             <button class="add-task" id="add">+</button>
@@ -34,8 +34,13 @@
       <div class="modal" id="modal">
         <h1>Add Task</h1>
         <div class="taskinp">
-          <input placeholder="Task Title..." id="title">
-          <button class="add" id="subtasks-btn">+ Subtasks</button>
+          <div class="maininp">  
+            <input placeholder="Task Title..." id="title">
+           <button class="add" id="subtasks-btn">+ Subtasks</button>
+        </div>
+        <div class="subtasks">
+            <input placeholder="subtask1">
+        </div>
         </div>
         <div class="task-details">
           <!--category and date-->
@@ -74,7 +79,6 @@
         </div>
           </div>
           <div id="overlay"></div>
-
         <div class="task-list" id="task-list">
           <div class="task-box">
             <div class="about">
@@ -102,6 +106,44 @@
            <i class="complete" data-lucide="square-check"></i>
            <i class="delete" data-lucide="trash-2"></i>
            </div>
+          </div>
+        </div>
+        <div class="task-details">
+          <div class="heading">
+            <h1></h1>
+            <div class="del-check">
+               <i class="complete" data-lucide="square-check"></i>
+               <i class="delete" data-lucide="trash-2"></i>
+            </div>
+          </div>
+
+          <div class="about-details">
+             <div class="prio-state">
+
+                <div class="prio">
+                  <i data-lucide="circle" class="prio-circle" ></i>
+                  <h2>high</h2>
+                </div>
+
+                <div class="state" >
+                  <i class="state-circle" data-lucide="circle" ></i>
+                  <h2>inprogress</h2>
+                </div>
+
+                  <div class="category">
+                  <h2>done</h2>
+                </div>
+
+              </div>
+            </div>
+            <div class="subtasks">
+              <h1>subtask title</h1>
+              
+               <div class="del-check">
+               <i class="complete" data-lucide="square-check"></i>
+              <i class="delete" data-lucide="trash-2"></i>
+            </div>
+            </div>
           </div>
         </div>
           

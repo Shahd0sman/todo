@@ -3,6 +3,9 @@ const modal=document.getElementById('modal')
 const overlay=document.getElementById('overlay')
 const cancel=document.getElementById('cancel')
 const add=document.getElementById('addtask')
+const subtaskbtn=document.getElementById('subtasks-btn')
+const subtaskbox=document.querySelector('.subtasks')
+
 
 plusbtn.addEventListener('click',()=>{
     modal.classList.add('active')
@@ -26,6 +29,22 @@ sideLinks.forEach(link => {
 
 });
 //bymyself
+const maxsub=7
+subtaskbtn.addEventListener('click',()=>{
+  const current =subtaskbox.querySelectorAll('input').length
+  if(current>=maxsub){
+    return
+  }
+  const input=document.createElement('input')
+  input.type='text'
+  input.placeholder=`subtask${current+1}`
+  subtaskbox.appendChild(input)
+})
+  
+const subtasksinp=subtaskbox.querySelectorAll('input')
+const subtasks=Array.from(subtasksinp).map(input=>input.value.trim()).filter(value=>value!=='')
+
+
 const prioritybtns=document.querySelectorAll('.p')
 let selectedp=''
 prioritybtns.forEach(btn=>{
@@ -55,6 +74,10 @@ statusbtns.forEach(btn=>{
   })
 })
 
+subtaskbtn.addEventListener('click',()=>{
+  subtaskbox.style.display='flex'
+})
+
 
 add.addEventListener('click',async()=>{
     const title=document.getElementById('title').value
@@ -66,7 +89,8 @@ add.addEventListener('click',async()=>{
       date:date,
       category:category,
       priority:selectedp,
-      status:selecteds
+      status:selecteds,
+      subtasks:subtasks
     }
     console.log(taskdetails)
     const res = await fetch('http://localhost:5000/tasks',{
@@ -83,5 +107,3 @@ add.addEventListener('click',async()=>{
 })
 
 
-
-  
